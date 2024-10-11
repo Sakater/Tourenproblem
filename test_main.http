@@ -1,0 +1,40 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/nodes
+Accept: application/json
+Content-Type: application/json
+
+[
+  {
+    "display_name": "Kochstr",
+    "lon": 13.390628,
+    "lat": 52.505982
+  },
+  {
+    "display_name": "Alexanderplatz",
+    "lon": 13.411281,
+    "lat": 52.521529
+  },
+  {
+    "display_name": "Warschauer Straße",
+    "lon": 13.448435,
+    "lat": 52.504820
+  },
+  {
+    "display_name": "Bethaniendamm_Adalbert",
+    "lon": 13.421828,
+    "lat": 52.505101
+  }
+]
+
+###
