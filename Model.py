@@ -1,5 +1,6 @@
 from ortools.constraint_solver import pywrapcp, routing_enums_pb2
 from Tour import Tour
+import numpy
 
 
 class Model:
@@ -12,27 +13,16 @@ class Model:
              [1, 0, 4, 5],
              [2, 4, 0, 6],
              [3, 5, 6, 0]]"""
-        # Initialisiere eine leere Matrix
-        matrix = [[0 for _ in range(len(self.tour.nodes))] for _ in range(len(self.tour.nodes))]
+        matrix = numpy.zeros((len(self.tour.nodes), len(self.tour.nodes)))
+        for i, edges in enumerate(self.tour.edges):
+            for j, edge in enumerate(edges):
+                matrix[i][j] = edge.distance
 
-        # Fülle die Matrix mit Distanzen
-        for i in range(len(self.tour.nodes)):
-            for j in range(len(self.tour.nodes)):
-                if i != j:
-                    # Finde die Kante, die die Knoten i und j verbindet
-                    for edge in self.tour.edges:
-                        if (edge['lon_origin'] == self.tour.nodes[i].lon and edge['lat_origin'] == self.tour.nodes[
-                            i].lat and
-                                edge['lon_dest'] == self.tour.nodes[j].lon and edge['lat_dest'] == self.tour.nodes[
-                                    j].lat):
-                            matrix[i][j] = edge['distance']
-                            break
-        print(matrix)
         return matrix
 
     def create_data_model(self):
         """Stores the data for the problem."""
-        data = {"distance_matrix": self.create_adjacency_matrix(), "num_vehicles": 1, "depot": 0}
+        data = {"distance_matrix": self.tour.edges, "num_vehicles": 1, "depot": 0}
         return data
 
     def print_solution(self, manager, routing, solution):
