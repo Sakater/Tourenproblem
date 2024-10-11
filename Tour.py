@@ -33,9 +33,9 @@ class Tour:
             response = await client.get(f"https://valhalla1.openstreetmap.de/sources_to_targets?json={valEdges_json}")
             data = json.loads(response.content)
             distances = data['sources_to_targets']
-            self.edges: List[List[Edge]] = [[] for _ in range(len(self.nodes))]
+            self.edges = [[] for _ in range(len(self.nodes))]
             for i, edges in enumerate(distances):
-                for edge in edges:
-                    self.edges[i].append(Edge(originNode=self.nodes[i], targetNode=self.nodes[i],
+                for j, edge in enumerate(edges):
+                    self.edges[i].append(Edge(originNode=self.nodes[i], targetNode=self.nodes[j],
                                               distance=edge['distance'], time=edge['time']))
             return self.edges

@@ -22,7 +22,7 @@ class Model:
 
     def create_data_model(self):
         """Stores the data for the problem."""
-        data = {"distance_matrix": self.tour.edges, "num_vehicles": 1, "depot": 0}
+        data = {"distance_matrix": self.create_adjacency_matrix(), "num_vehicles": 1, "depot": 0}
         return data
 
     def print_solution(self, manager, routing, solution):
