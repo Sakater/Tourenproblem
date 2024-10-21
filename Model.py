@@ -1,6 +1,7 @@
-from ortools.constraint_solver import pywrapcp, routing_enums_pb2
-from Tour import Tour
 import numpy
+from ortools.constraint_solver import pywrapcp, routing_enums_pb2
+
+from Tour import Tour
 
 
 class Model:
@@ -58,15 +59,15 @@ class Model:
             """Get vehicle routes from a solution and store them in an array."""
             # Get vehicle routes and store them in a two dimensional array whose
             # i,j entry is the jth location visited by vehicle i along its route.
-            routess = []
+            routes = []
             for route_nbr in range(routing.vehicles()):
                 index = routing.Start(route_nbr)
                 route = [manager.IndexToNode(index)]
                 while not routing.IsEnd(index):
                     index = solution.Value(routing.NextVar(index))
                     route.append(manager.IndexToNode(index))
-                routess.append(route)
-            return routess
+                routes.append(route)
+            return routes
 
         transit_callback_index = routing.RegisterTransitCallback(distance_callback)
 
@@ -78,10 +79,9 @@ class Model:
         )
 
         solution = routing.SolveWithParameters(search_parameters)
-        if solution:
-            self.print_solution(manager, routing, solution)
 
         routes = get_routes(solution, routing, manager)
+        return routes
         # Display the routes.
-        for i, route in enumerate(routes):
-            print('Route', i, route)
+        """for i, route in enumerate(routes):
+            print('Route', i, route)"""
