@@ -38,3 +38,253 @@ Content-Type: application/json
 ]
 
 ###
+
+POST http://127.0.0.1:8000/routes
+Accept: application/json
+Content-Type: application/json
+
+{
+  "distances": [
+    [
+      {
+        "originNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "targetNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "distance": 0.0,
+        "time": 0
+      },
+      {
+        "originNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "targetNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "distance": 2.9,
+        "time": 466
+      },
+      {
+        "originNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "targetNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "distance": 5.207,
+        "time": 752
+      },
+      {
+        "originNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "targetNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "distance": 2.806,
+        "time": 416
+      }
+    ],
+    [
+      {
+        "originNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "targetNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "distance": 3.592,
+        "time": 561
+      },
+      {
+        "originNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "targetNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "distance": 0.0,
+        "time": 0
+      },
+      {
+        "originNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "targetNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "distance": 4.64,
+        "time": 668
+      },
+      {
+        "originNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "targetNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "distance": 3.038,
+        "time": 457
+      }
+    ],
+    [
+      {
+        "originNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "targetNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "distance": 4.524,
+        "time": 642
+      },
+      {
+        "originNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "targetNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "distance": 4.779,
+        "time": 694
+      },
+      {
+        "originNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "targetNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "distance": 0.0,
+        "time": 0
+      },
+      {
+        "originNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "targetNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "distance": 2.791,
+        "time": 404
+      }
+    ],
+    [
+      {
+        "originNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "targetNode": {
+          "display_name": "Kochstr",
+          "lat": 52.505982,
+          "lon": 13.390628
+        },
+        "distance": 2.741,
+        "time": 408
+      },
+      {
+        "originNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "targetNode": {
+          "display_name": "Alexanderplatz",
+          "lat": 52.521529,
+          "lon": 13.411281
+        },
+        "distance": 2.885,
+        "time": 455
+      },
+      {
+        "originNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "targetNode": {
+          "display_name": "Warschauer Straße",
+          "lat": 52.50482,
+          "lon": 13.448435
+        },
+        "distance": 3.07,
+        "time": 445
+      },
+      {
+        "originNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "targetNode": {
+          "display_name": "Bethaniendamm_Adalbert",
+          "lat": 52.505101,
+          "lon": 13.421828
+        },
+        "distance": 0.0,
+        "time": 0
+      }
+    ]
+  ],
+  "routes": [
+    [
+      0,
+      1,
+      2,
+      3,
+      0
+    ]
+  ]
+}
